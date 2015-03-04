@@ -1,7 +1,7 @@
 #!/bin/bash
 source .secrets
 
-readarray machines < .servers.txt
+readarray machines < .downstairs
 prog=$1
 
 mach_size=${#machines[@]}
@@ -16,8 +16,6 @@ counter=0
 while [ 1 ]; do
 
   for ((i = 0 ;i < $mach_size;i++)); do
-#echo "pandas"
-#echo $counter
     if [ ! -z "${machines[$i]}" ]
       then 
 	# parentheses surrounding a command open a subshell
