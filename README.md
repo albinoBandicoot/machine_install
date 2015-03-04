@@ -1,5 +1,6 @@
 # Setup
-* Simply clone this repo and install expect: bash`sudo apt-get install expect`
+* Simply clone this repo and install expect: ```sudo apt-get install expect```
+
 # Usage
 * In order to be run mach_install.sh must be run with an argument indicating the program to be installed. ie ./mach_install.sh tmux
 * This program also requires expect to be installed on the machine it is running on.
