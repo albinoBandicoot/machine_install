@@ -1,7 +1,17 @@
 #!/bin/bash
-source .secrets
 
-readarray machines < .downstairs
+if [ -f ".secrets.gpg" ]
+then
+	PASSWORD=`gpg -d .secrets.gpg`		# for encrypted password storage
+elif [ -f ".secrets" ]
+then
+	PASSWORD=`cat .secrets`			# for unencrypted password storage
+else
+	echo No .secrets or .secrets.gpg found!
+	exit 1
+fi
+
+readarray machines < .machines
 prog=$1
 
 mach_size=${#machines[@]}
